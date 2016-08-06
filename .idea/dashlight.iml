@@ -2,9 +2,9 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/../DashKing/.tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/../DashKing/temp" />
-      <excludeFolder url="file://$MODULE_DIR$/../DashKing/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../dashlight/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../dashlight/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/../dashlight/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

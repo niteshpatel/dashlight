@@ -1,13 +1,7 @@
 //noinspection JSUnusedAssignment
-var dashlight = dashlight || {};
+var dashlight = (function (module) {
+    module.greeting = "Hello, world!";
 
-$(function () {
-    dashlight = (function (module) {
-        module.greeting = "Hello, world!";
+    return module;
 
-        return module;
-
-    })(dashlight || {});
-
-    console.log(dashlight.greeting);
-});
+})(dashlight || {});

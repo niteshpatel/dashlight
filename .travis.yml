@@ -10,7 +10,7 @@ jdk:
 
 addons:
   code_climate
-  sonarqube
+  sonarqube: true
 
 script:
 - sudo apt-get install oracle-java8-installer

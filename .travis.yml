@@ -13,4 +13,4 @@ script:
   # other script steps might be done before running the actual SonarQube analysis
   - sudo apt-get install oracle-java8-installer
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X

@@ -12,3 +12,9 @@ after_script:
 notifications:
   slack:
     secure: F8aUpii3HAKQAOYbRE56ImsUlskLxiQdOjMyQgwxYRQc8FiMLA5ShFJ9TBqNBllyd/KJOgUCJqO2PA3Vm6DaT3iHFopfwICBy5lo4YGuj8zhnPUWa2jdBT6u6JvXKmwTXB4beM+WpV7XpI7b3ioQFGKGJ12aOA6OMmW9u+ttyKqE7KozbRnP2yxP8j9Psi5Np8TAY1/RUifnsu6BJ1uMPEid2LaYp9ZVZqYwjEQGNERQnbJev0No/8WVf0EA29fdwF5g1vVxdskAfeFmzsS7rcQNjHoY+wQ2SZXFQEj1yzrX6QhGApLsp8nKN/uC5rgZOm+Aoz1wHO+C85U5Ld8Tc/g9JNi3c70QUaEVO/uN9n3OAsAicU+IqdTlR4Wzzqnq7EptH0Xbko2OT5vMo9/86HMpQNhGWOR+MZZfO/1pjCu6CbmoyYznJF9G+9AWNdB479riEj8XMm9sxMEhO+qAAmbDLONpjf7S728z8kilAg4ZhkCQCkzw7L577QR5uxjsyZBQ+KRGhSTeV7XXRztJonoKuESiIiOL3QGWXwSnphCdt+pXtyLrIRdh+AGy2K/MFn0OoHgPVTZi89SxV89uLG4sR5o/ZNNlRUxg5Db6GShcpQfDXtYGemST1MOG73IGwGt0NZfbVF6MO6B0FOz0d9Y/Z5Lafy/tsK1H++PkN9U=
+
+deploy:
+  provider: surge
+  project: ./
+  domain: dashlight.surge.sh
+  

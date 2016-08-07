@@ -7,8 +7,6 @@ engines:
       - javascript
       - python
       - php
-      exclude_paths:
-      - "js/src/jquery-3.1.0.min.js"
   eslint:
     enabled: true
   fixme:
@@ -23,3 +21,4 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths: []
+- "js/src/jquery-3.1.0.min.js"

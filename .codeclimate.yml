@@ -20,5 +20,5 @@ ratings:
   - "**.php"
   - "**.py"
   - "**.rb"
-exclude_paths: []
-- "js/src/jquery-3.1.0.min.js"
+exclude_paths:
+- "js/lib/*"

@@ -2,14 +2,16 @@ language: node_js
 sudo: required
 node_js:
 - '4'
-jdk:
-- oraclejdk8
-addons:
-  sonarqube: true
-env:
-  global:
-  - secure: NNVv9UI3ZDE50jROILRSWacjBhhsm9cqPnENETougLEr2G5kpBTRk1tTQivg5HNVYl1e0XsE+XwwRHyXC8v+M5g1sa/M3PUVVozp9gea6XREq0fInV4kwjCRmix0b7dIvsghqkCSJ0dRCbutKip4o65HmDoVcp93S+wiYn6YsvT6oQrFt3/pop+fxdwI0MtoQoW50E6XlGHMk7/p0RD7HYhR8ispOsrg6tRyO1RRH20fYUzC6U/IeUFww8IU10vY03ScTggcNqpJX+86WEZSJs6vsflSZhzwTs4ZQC5CcjBZMEMwS4l1K7q+TypYB1Knmg3FBS+C2zVhCUEAQK9Sl8utpx9BIhLuDrOIpiY//Aiz2+SkXRH45QbkX8NKJkZNnf2kmblcoCOREt79j4iK22JZYSJQEvfJNpffbj7Vrthc7Z+Tj6F+R09sdpT9AZzGHmxe53ZYEP5/9CMVQmBL4G7kaJwhcR1EFTDS1/zftPJt8ISABgPpuyMuQVu2PTFkQhhamNy0ihuqBc/IrsOcrV39XWdkwwzMXS+FSXcdJHxIs1pnJdmTjXgBxcYAXPPuZVt+gbN2L+sYIffOIxnQk6r55bTStoax33SgGWfqSBq5nAeZkYvuaQ0nqK/FgSHlAYG+VPzirV0GEku/XNxuLV6DE9+7/FjHFGmruD6zQyQ=
-script:
-- sudo apt-get install oracle-java8-installer
-- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
-- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X
+
+# Disable Sonar specific config - cannot get the authentication for uploading reports to work
+#jdk:
+#- oraclejdk8
+#addons:
+#  sonarqube: true
+#env:
+#  global:
+#  - secure: NNVv9UI3ZDE50jROILRSWacjBhhsm9cqPnENETougLEr2G5kpBTRk1tTQivg5HNVYl1e0XsE+XwwRHyXC8v+M5g1sa/M3PUVVozp9gea6XREq0fInV4kwjCRmix0b7dIvsghqkCSJ0dRCbutKip4o65HmDoVcp93S+wiYn6YsvT6oQrFt3/pop+fxdwI0MtoQoW50E6XlGHMk7/p0RD7HYhR8ispOsrg6tRyO1RRH20fYUzC6U/IeUFww8IU10vY03ScTggcNqpJX+86WEZSJs6vsflSZhzwTs4ZQC5CcjBZMEMwS4l1K7q+TypYB1Knmg3FBS+C2zVhCUEAQK9Sl8utpx9BIhLuDrOIpiY//Aiz2+SkXRH45QbkX8NKJkZNnf2kmblcoCOREt79j4iK22JZYSJQEvfJNpffbj7Vrthc7Z+Tj6F+R09sdpT9AZzGHmxe53ZYEP5/9CMVQmBL4G7kaJwhcR1EFTDS1/zftPJt8ISABgPpuyMuQVu2PTFkQhhamNy0ihuqBc/IrsOcrV39XWdkwwzMXS+FSXcdJHxIs1pnJdmTjXgBxcYAXPPuZVt+gbN2L+sYIffOIxnQk6r55bTStoax33SgGWfqSBq5nAeZkYvuaQ0nqK/FgSHlAYG+VPzirV0GEku/XNxuLV6DE9+7/FjHFGmruD6zQyQ=
+#script:
+#- sudo apt-get install oracle-java8-installer
+#- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+#- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X

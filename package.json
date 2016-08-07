@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "karma": "~0.12"
+  },
+  "scripts": {
+    "test": "karma start --single-run --browsers PhantomJS"
+  }
+}

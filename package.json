@@ -8,7 +8,8 @@
     "karma": "~0.12",
     "karma-jasmine": "1.0.x",
     "karma-coverage": "1.1.x",
-    "karma-phantomjs-launcher": "1.0.x"
+    "karma-phantomjs-launcher": "1.0.x",
+    "codeclimate-test-reporter": "0.3.3"
   },
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS"

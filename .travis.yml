@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "4"
+jdk:
+  - oraclejdk8
 addons:
   sonarqube: true
 env:
@@ -9,5 +11,3 @@ env:
 script:
   # other script steps might be done before running the actual SonarQube analysis
   - sonar-scanner -Dsonar.login=$SONAR_TOKEN
-jdk:
-  - oraclejdk8

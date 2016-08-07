@@ -1,16 +1,15 @@
 language: node_js
 sudo: required
 node_js:
-  - "4"
+- '4'
 jdk:
-  - oraclejdk8
+- oraclejdk8
 addons:
   sonarqube: true
 env:
   global:
-    - secure: "ZF1+budFsZF/MMN++dQll99hxxXLtKgoZbyz3zIr4NWA4IktX5nXGNSnqyDkdryD6FBLm3bMm/X7BaSh9ifCMH0mCJYkCt+3lpOnEVfJ7YduskWBcN/4MJUE7GccBhYWKAJEr1l+1NCXicMD2FIRU1PbKNWDvnpTK5aEk3I/31AHcZpoTQp9pkWHScDdZb/Hd0iGm7N3lA7YzjmEpFy62h7UufcF+bUbM+f6fUxuP/FXp97At4huQQo1q+6Sfi7dxr6stdCyI/zFkHuk48KGXb9DYnriy0sARRoVBnDPjW9z7xnXcI0X6vUS7ujS8OwlyAQjO/MRNsH49VRxwaGFGtwkz9IrQ3v4QlB7wBLhx7/4RfUuWgQKzTua5IRSjG/GJS50xN/gVM3BdZPNYHaWQvehpCcnVV7xgQVvha84OMlNuYCn/zBr1dTlK/Wrq8ARlw36yDcdNTznzW5PVjImhfcd2mEJMzYV0jN6Mr/3F9GiIx0iAp/19JTx7H18ksCSvHxL+NrKdUrBrzkmJL2UINepruMvhJQsBg9mYRqMCbAwqAcDrPx5/uVUBag3KUxl5cKItddPmrkZLhJZkBopd3RUT0aaOgWdPro+KSg8tSBtWX8jThENlDr3Z54YiRty7tFoykETnOwwrqro2/d7rfucSBjUcsKiGFzGjD2+Ob0="
+  - secure: NNVv9UI3ZDE50jROILRSWacjBhhsm9cqPnENETougLEr2G5kpBTRk1tTQivg5HNVYl1e0XsE+XwwRHyXC8v+M5g1sa/M3PUVVozp9gea6XREq0fInV4kwjCRmix0b7dIvsghqkCSJ0dRCbutKip4o65HmDoVcp93S+wiYn6YsvT6oQrFt3/pop+fxdwI0MtoQoW50E6XlGHMk7/p0RD7HYhR8ispOsrg6tRyO1RRH20fYUzC6U/IeUFww8IU10vY03ScTggcNqpJX+86WEZSJs6vsflSZhzwTs4ZQC5CcjBZMEMwS4l1K7q+TypYB1Knmg3FBS+C2zVhCUEAQK9Sl8utpx9BIhLuDrOIpiY//Aiz2+SkXRH45QbkX8NKJkZNnf2kmblcoCOREt79j4iK22JZYSJQEvfJNpffbj7Vrthc7Z+Tj6F+R09sdpT9AZzGHmxe53ZYEP5/9CMVQmBL4G7kaJwhcR1EFTDS1/zftPJt8ISABgPpuyMuQVu2PTFkQhhamNy0ihuqBc/IrsOcrV39XWdkwwzMXS+FSXcdJHxIs1pnJdmTjXgBxcYAXPPuZVt+gbN2L+sYIffOIxnQk6r55bTStoax33SgGWfqSBq5nAeZkYvuaQ0nqK/FgSHlAYG+VPzirV0GEku/XNxuLV6DE9+7/FjHFGmruD6zQyQ=
 script:
-  # other script steps might be done before running the actual SonarQube analysis
-  - sudo apt-get install oracle-java8-installer
-  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X
+- sudo apt-get install oracle-java8-installer
+- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X

@@ -1,25 +1,26 @@
 language: node_js
+
 sudo: required
+
 node_js:
-  - '4'
+- '4'
+
+jdk:
+- oraclejdk8
+
 addons:
   code_climate
+  sonarqube
+
+script:
+- sudo apt-get install oracle-java8-installer
+- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X
+
 after_script:
-  - ls -al coverage/*
-  - codeclimate-test-reporter < ./coverage/**/lcov.info
+- ls -al coverage/*
+- codeclimate-test-reporter < ./coverage/**/lcov.info
+
 notifications:
   slack:
     secure: F8aUpii3HAKQAOYbRE56ImsUlskLxiQdOjMyQgwxYRQc8FiMLA5ShFJ9TBqNBllyd/KJOgUCJqO2PA3Vm6DaT3iHFopfwICBy5lo4YGuj8zhnPUWa2jdBT6u6JvXKmwTXB4beM+WpV7XpI7b3ioQFGKGJ12aOA6OMmW9u+ttyKqE7KozbRnP2yxP8j9Psi5Np8TAY1/RUifnsu6BJ1uMPEid2LaYp9ZVZqYwjEQGNERQnbJev0No/8WVf0EA29fdwF5g1vVxdskAfeFmzsS7rcQNjHoY+wQ2SZXFQEj1yzrX6QhGApLsp8nKN/uC5rgZOm+Aoz1wHO+C85U5Ld8Tc/g9JNi3c70QUaEVO/uN9n3OAsAicU+IqdTlR4Wzzqnq7EptH0Xbko2OT5vMo9/86HMpQNhGWOR+MZZfO/1pjCu6CbmoyYznJF9G+9AWNdB479riEj8XMm9sxMEhO+qAAmbDLONpjf7S728z8kilAg4ZhkCQCkzw7L577QR5uxjsyZBQ+KRGhSTeV7XXRztJonoKuESiIiOL3QGWXwSnphCdt+pXtyLrIRdh+AGy2K/MFn0OoHgPVTZi89SxV89uLG4sR5o/ZNNlRUxg5Db6GShcpQfDXtYGemST1MOG73IGwGt0NZfbVF6MO6B0FOz0d9Y/Z5Lafy/tsK1H++PkN9U=
-
-# Disable Sonar specific config - cannot get the authentication for uploading reports to work
-#jdk:
-#- oraclejdk8
-#addons:
-#  sonarqube: true
-#env:
-#  global:
-#  - secure: NNVv9UI3ZDE50jROILRSWacjBhhsm9cqPnENETougLEr2G5kpBTRk1tTQivg5HNVYl1e0XsE+XwwRHyXC8v+M5g1sa/M3PUVVozp9gea6XREq0fInV4kwjCRmix0b7dIvsghqkCSJ0dRCbutKip4o65HmDoVcp93S+wiYn6YsvT6oQrFt3/pop+fxdwI0MtoQoW50E6XlGHMk7/p0RD7HYhR8ispOsrg6tRyO1RRH20fYUzC6U/IeUFww8IU10vY03ScTggcNqpJX+86WEZSJs6vsflSZhzwTs4ZQC5CcjBZMEMwS4l1K7q+TypYB1Knmg3FBS+C2zVhCUEAQK9Sl8utpx9BIhLuDrOIpiY//Aiz2+SkXRH45QbkX8NKJkZNnf2kmblcoCOREt79j4iK22JZYSJQEvfJNpffbj7Vrthc7Z+Tj6F+R09sdpT9AZzGHmxe53ZYEP5/9CMVQmBL4G7kaJwhcR1EFTDS1/zftPJt8ISABgPpuyMuQVu2PTFkQhhamNy0ihuqBc/IrsOcrV39XWdkwwzMXS+FSXcdJHxIs1pnJdmTjXgBxcYAXPPuZVt+gbN2L+sYIffOIxnQk6r55bTStoax33SgGWfqSBq5nAeZkYvuaQ0nqK/FgSHlAYG+VPzirV0GEku/XNxuLV6DE9+7/FjHFGmruD6zQyQ=
-#script:
-#- sudo apt-get install oracle-java8-installer
-#- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
-#- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X

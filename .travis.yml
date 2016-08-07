@@ -9,7 +9,7 @@ jdk:
 - oraclejdk8
 
 addons:
-  code_climate
+  code_climate: true
   sonarqube: true
 
 script:

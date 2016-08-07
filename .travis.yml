@@ -7,7 +7,8 @@ addons:
     repo_token:
       secure: "WdisaPhC9fQ/OhzL5VbQyzHME1M7fE3e0wDBAMHV0kTwAVFtdd6GTA/AW4bNdjjK951eHX2g0JPk0pJE5hKZTzHc+7LxtvNJSEJJCFG2EPtOaveH/voMcJJiLAdiSgmU9I1AMM4FE8fdwGNLBHs9vwE3O7Z4oW0KFGWBG5yasyWKhh1SWp2ZniNvP7H7GB2BGMruVCCebIYrIgJDnHb1tlW0TXRO8y7KJq4n41yRrp3dZP/pBTeb4vlKJX6vz7opyhHQbR5dh4U3x88Ab9wMYAz+8HQjrRV0rrPsGpy/1Na8L2CtpaRFGvr+TtLpbd3c3FIHz+rYvRRVk7kmbJnwR7Is8aAi1ZW6xNz4YSJqILC8z22Z4JIg8rXh3JA6Wm9aivHRdUK9PRhevoXla9pCL+da2XFcLQ6XPOCj4yC8h2Jr+1S+4gJ05DBmQAxru+ReRXe9CYXVRYPXbG1lYkU+JJ9D7eYKiV6R5txod2z4iAP11ytI3p1yVJgIZF8LCxEN8WFmaaDvt9G5UZhGvacRO5Szf+8BdX5ET2zGdvLZcC5KH2fKvXpZewqQwfhBIdOE1iKPqSLeGQrjSlLmNu8qtb77+PoTDTeV2Qi//1Ou22czCf0zQ/+zBpNslNtN1L+gWVfm1YJaoyaGHaGFwS9RqHfW2FATTnls6ivKm+m5++A="
 after_script:
-  - codeclimate-test-reporter < coverage/lcov.info
+  - ls -al .
+  - codeclimate-test-reporter < ./coverage/lcov.info
 # Disable Sonar specific config - cannot get the authentication for uploading reports to work
 #jdk:
 #- oraclejdk8

@@ -1,24 +1,12 @@
 language: node_js
 
-sudo: required
-
 node_js:
 - '4'
 
-jdk:
-- oraclejdk8
-
 addons:
-  code_climate: true
-  sonarqube: true
-
-script:
-- sudo apt-get install oracle-java8-installer
-- export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
-- sonar-scanner -Dsonar.login=$SONAR_TOKEN -e -X
+  code_climate
 
 after_script:
-- ls -al coverage/*
 - codeclimate-test-reporter < ./coverage/**/lcov.info
 
 notifications:

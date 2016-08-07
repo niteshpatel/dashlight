@@ -1,6 +1,6 @@
 //noinspection JSUnusedAssignment
 var dashlight = (function (module) {
-    module.greeting = "Hello, world!2";
+    module.greeting = "Hello, world!";
 
     return module;
 

@@ -17,32 +17,29 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'js/lib/*.js',
-            'js/src/core.js',
-            'js/src/config.js',
-            'js/test/*.js',
+            'source/js/lib/*.js',
+            'source/js/src/core.js',
+            'source/js/src/config.js',
+            'source/js/test/*.js',
             {
-                pattern: 'js/src/widgets/*',
-                included: true,
-                served: true,
-                nocache: true
-            },
-            {
-                pattern: 'providers.js',
+                pattern: 'source/js/src/widgets/*',
                 included: false,
                 served: true,
                 nocache: true
             },
             {
-                pattern: 'example_providers/*',
+                pattern: 'source/samples/**',
                 included: false,
                 served: true,
                 nocache: true
             }
         ],
 
+
+        // list of proxy rules
         proxies: {
-            "/": "/base/"
+            "/js": "/base/source/js",
+            "/samples": "/base/source/samples"
         },
 
 

@@ -1,0 +1,3 @@
+$(function () {
+    dashlight.init($("#container"));
+});

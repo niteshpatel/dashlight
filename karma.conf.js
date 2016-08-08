@@ -18,9 +18,32 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'js/lib/*.js',
-            'js/src/*.js',
-            'js/test/*.js'
+            'js/src/core.js',
+            'js/src/config.js',
+            'js/test/*.js',
+            {
+                pattern: 'js/src/widgets/*',
+                included: true,
+                served: true,
+                nocache: true
+            },
+            {
+                pattern: 'providers.js',
+                included: false,
+                served: true,
+                nocache: true
+            },
+            {
+                pattern: 'example_providers/*',
+                included: false,
+                served: true,
+                nocache: true
+            }
         ],
+
+        proxies: {
+            "/": "/base/"
+        },
 
 
         // list of files to exclude
@@ -71,6 +94,7 @@ module.exports = function (config) {
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false,
+
 
         // Concurrency level
         // how many browser should be started simultaneous

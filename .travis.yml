@@ -15,6 +15,6 @@ notifications:
 
 deploy:
   provider: surge
-  project: ./
+  project: ./source/
   domain: dashlight.surge.sh
   

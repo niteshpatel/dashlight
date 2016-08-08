@@ -48,7 +48,7 @@ var dashlight = (function (module) {
             $.ajax({
                 url: providers[i].url,
                 dataType: "jsonp",
-                jsonpCallback: "callback",
+                jsonpCallback: providers[i].name,
                 success: successCallBackFactory(i)
             });
         }

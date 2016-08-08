@@ -1,5 +1,5 @@
 //noinspection JSUnresolvedFunction
-callback(
+helloworld_provider(
     {
         text: "Hello, world!"
     }

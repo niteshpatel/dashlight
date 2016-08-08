@@ -37,17 +37,19 @@ var dashlight = (function (module) {
     };
 
     var handleProviders = function (providers) {
+        var successCallBackFactory = function (index) {
+            var p = providers[index];
+            return function (content) {
+                render(p.widget, p.name, content)
+            }
+        };
+
         for (var i = 0; i < providers.length; i++) {
             $.ajax({
                 url: providers[i].url,
                 dataType: "jsonp",
                 jsonpCallback: "callback",
-                success: (function () {
-                    var p = providers[i];
-                    return function (content) {
-                        render(p.widget, p.name, content)
-                    }
-                }())
+                success: successCallBackFactory(i)
             });
         }
     };

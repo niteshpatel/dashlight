@@ -43,7 +43,7 @@ describe("dashlight", function () {
                 });
 
             dashlight.init($("<div></div>"));
-        });
+        }, 10000);
 
         it("has the 'one_line' and 'build_status' widgets loaded", function () {
             expect(Object.keys(dashlight.widgets)).toEqual([
@@ -71,7 +71,7 @@ describe("dashlight", function () {
 
         it("container contains the text 'build is finishing|running'", function () {
             expect(dashlight.container.text())
-                .toMatch('dashlight :: Build and Deploy > (started|running|passed|finished) build for \\[master\\];');
+                .toMatch('dashlight :: Build and Deploy > (started|running|passed|failed|finished) build for \\[master\\];');
         });
     });
 });

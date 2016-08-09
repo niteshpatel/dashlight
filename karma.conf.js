@@ -105,7 +105,8 @@ module.exports = function (config) {
                 base: 'PhantomJS',
                 options: {
                     settings: {
-                        webSecurityEnabled: false
+                        webSecurityEnabled: false,
+                        resourceTimeout: 20000
                     }
                 }
             }

@@ -20,7 +20,18 @@ module.exports = function (config) {
             'source/js/lib/*.js',
             'source/js/src/core.js',
             'source/js/src/config.js',
-            'source/js/test/*.js',
+            {
+                pattern: 'source/js/test/*.js',
+                included: true,
+                served: true,
+                nocache: true
+            },
+            {
+                pattern: 'source/js/test/*/*.js',
+                included: true,
+                served: true,
+                nocache: true
+            },
             {
                 pattern: 'source/js/**',
                 included: false,

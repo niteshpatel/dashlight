@@ -70,7 +70,8 @@ describe("dashlight", function () {
         });
 
         it("container contains the text 'build is finishing|running'", function () {
-            expect(dashlight.container.text()).toMatch('dashlight :: Build and Deploy > (finished|running) build for \\[master\\];');
+            expect(dashlight.container.text())
+                .toMatch('dashlight :: Build and Deploy > (started|running|finished) build for \\[master\\];');
         });
     });
 });

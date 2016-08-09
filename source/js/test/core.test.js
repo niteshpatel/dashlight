@@ -37,7 +37,7 @@ describe("dashlight", function () {
         beforeEach(function (done) {
             renderSpy = spyOn(dashlight, "notifyRendered")
                 .and.callFake(function () {
-                    if (renderSpy.calls.count() == 2) {
+                    if (renderSpy.calls.count() === 2) {
                         done();
                     }
                 });

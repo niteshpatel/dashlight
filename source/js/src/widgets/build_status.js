@@ -15,7 +15,7 @@ dashlight.widgets = (function (module) {
                     + "; started at " + content.startTime.format("DD MMM YYYY HH:mm:ss");
             }
 
-            if (!!content.finishTime.isValid()) {
+            if (content.finishTime.isValid()) {
                 minutes = content.duration.minutes();
                 textDuration = content.duration.seconds() + "s";
                 if (minutes > 0) {

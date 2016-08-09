@@ -10,31 +10,20 @@ var dashlight = (function (module) {
     };
 
     var loadWidgets = function () {
-        var deferred = $.Deferred();
-
-        var loadWidget = function (widgetId) {
-            if (widgetId < module.config.widgetUrls.length) {
-                $.getScript(module.config.widgetUrls[widgetId], function () {
-                    loadWidget(++widgetId)
-                });
-            }
-            else {
-                //noinspection JSUnresolvedFunction
-                deferred.resolve();
-            }
-        };
-        loadWidget(0);
-
-        return deferred;
+        return loadItems(module.config.widgetUrls);
     };
 
     var loadPlugins = function () {
+        return loadItems(module.config.pluginUrls);
+    };
+
+    var loadItems = function (items) {
         var deferred = $.Deferred();
 
-        var loadPlugin = function (pluginId) {
-            if (pluginId < module.config.pluginUrls.length) {
-                $.getScript(module.config.pluginUrls[pluginId], function () {
-                    loadPlugin(++pluginId)
+        var loadItem = function (itemId) {
+            if (itemId < items.length) {
+                $.getScript(items[itemId], function () {
+                    loadItem(++itemId)
                 });
             }
             else {
@@ -42,7 +31,7 @@ var dashlight = (function (module) {
                 deferred.resolve();
             }
         };
-        loadPlugin(0);
+        loadItem(0);
 
         return deferred;
     };

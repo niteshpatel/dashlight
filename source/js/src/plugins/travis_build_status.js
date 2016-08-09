@@ -8,7 +8,7 @@ dashlight.plugins = (function (module) {
                 startTime,
                 finishTime,
                 branch;
-            
+
             build = content.builds[0];
             branch = content.commits[0].branch;
             duration = moment.duration(build.duration);

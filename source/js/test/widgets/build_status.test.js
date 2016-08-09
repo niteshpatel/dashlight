@@ -7,16 +7,8 @@ describe("dashlight", function () {
     describe("'build_status' widget", function () {
 
         var renderSpy;
-
         beforeEach(function (done) {
-            renderSpy = spyOn(dashlight, "notifyRendered")
-                .and.callFake(function () {
-                    if (renderSpy.calls.count() === 2) {
-                        done();
-                    }
-                });
-
-            dashlight.init($("<div></div>"));
+            renderSpy = initAndWaitUntilRenderedAndReturnRenderSpy(done);
         });
 
         it("adds start time if provided", function () {

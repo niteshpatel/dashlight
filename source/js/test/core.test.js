@@ -35,15 +35,8 @@ describe("dashlight", function () {
         var renderSpy;
 
         beforeEach(function (done) {
-            renderSpy = spyOn(dashlight, "notifyRendered")
-                .and.callFake(function () {
-                    if (renderSpy.calls.count() === 2) {
-                        done();
-                    }
-                });
-
-            dashlight.init($("<div></div>"));
-        }, 10000);
+            renderSpy = initAndWaitUntilRenderedAndReturnRenderSpy(done);
+        });
 
         it("has the 'one_line' and 'build_status' widgets loaded", function () {
             expect(Object.keys(dashlight.widgets)).toEqual([

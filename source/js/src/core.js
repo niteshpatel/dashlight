@@ -46,7 +46,11 @@ var dashlight = (function (module) {
     };
 
     var handleProviders = function (providers) {
-        var successCallBackFactory = function (index) {
+        var successCallBackFactory,
+            provider,
+            settings;
+
+        successCallBackFactory = function (index) {
             var p = providers[index];
             return function (content) {
                 render(p.widget, p.name, p.plugin, p.options, content)
@@ -54,12 +58,20 @@ var dashlight = (function (module) {
         };
 
         for (var i = 0; i < providers.length; i++) {
-            $.ajax({
-                url: providers[i].url,
-                dataType: "jsonp",
-                jsonpCallback: providers[i].name,
+            provider = providers[i];
+
+            settings = {
+                url: provider.url,
+                headers: provider.headers,
                 success: successCallBackFactory(i)
-            });
+            };
+
+            if (provider.jsonp) {
+                settings.dataType = "jsonp";
+                settings.jsonpCallback = provider.name;
+            }
+
+            $.ajax(settings);
         }
     };
 

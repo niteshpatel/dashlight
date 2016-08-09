@@ -6,9 +6,11 @@ dashlight.plugins = (function (module) {
             var build,
                 duration,
                 startTime,
-                finishTime;
-
-            build = content[0];
+                finishTime,
+                branch;
+            
+            build = content.builds[0];
+            branch = content.commits[0].branch;
             duration = moment.duration(build.duration);
             startTime = moment(build.started_at);
             finishTime = moment(build.finished_at);
@@ -16,7 +18,7 @@ dashlight.plugins = (function (module) {
             return {
                 project: options.project,
                 build: options.build,
-                branch: build.branch,
+                branch: branch,
                 state: build.state,
                 duration: duration,
                 startTime: startTime,

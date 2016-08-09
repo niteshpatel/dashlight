@@ -19,14 +19,15 @@ describe("dashlight", function () {
                 branch: "master",
                 startTime: moment(new Date()),
                 finishTime: moment(new Date()),
-                duration: moment.duration(0)
+                duration: moment.duration(100000)
             }).text();
 
             expect(text)
                 .toMatch('dashlight :: Build and Deploy >'
                     + ' (started|running|finished) build for \\[master\\];'
                     + ' started at .*'
-                    + ' finished at .*');
+                    + ' finished at .*'
+                    + ' \\(1m\\:40s\\)');
         });
     });
 });

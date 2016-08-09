@@ -7,8 +7,8 @@ dashlight.widgets = (function (module) {
             var textDuration;
             var minutes;
 
-            text = content.branch + " build"
-                + " is " + content.state;
+            text = content.project + " :: " + content.build + " > "
+                + content.state + " build for [" + content.branch + "]";
 
             if (content.startTime.isValid()) {
                 text = text

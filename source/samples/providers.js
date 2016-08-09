@@ -10,7 +10,11 @@ callback(
             name: "travis_dashlight_provider",
             widget: "build_status",
             plugin: "travis_build_status",
-            url: "http://api.travis-ci.org/repos/niteshpatel/dashlight/builds"
+            url: "http://api.travis-ci.org/repos/niteshpatel/dashlight/builds",
+            options: {
+                project: "dashlight",
+                build: "Build and Deploy"
+            }
         }
     ]
 );

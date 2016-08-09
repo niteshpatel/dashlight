@@ -60,7 +60,7 @@ var dashlight = (function (module) {
         var successCallBackFactory = function (index) {
             var p = providers[index];
             return function (content) {
-                render(p.widget, p.name, p.plugin, content)
+                render(p.widget, p.name, p.plugin, p.options, content)
             }
         };
 
@@ -74,10 +74,10 @@ var dashlight = (function (module) {
         }
     };
 
-    var render = function (widgetName, name, pluginName, content) {
+    var render = function (widgetName, name, pluginName, options, content) {
         var plugin = dashlight.plugins[pluginName];
         if (plugin && plugin.processResponse) {
-            content = plugin.processResponse(content);
+            content = plugin.processResponse(content, options);
         }
 
         dashlight.container.append(

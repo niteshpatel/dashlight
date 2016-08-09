@@ -17,7 +17,7 @@ callback(
             },
             options: {
                 project: "dashlight",
-                build: "Build and Deploy"
+                build: "BnD"
             }
         }
     ]

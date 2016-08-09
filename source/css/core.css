@@ -1,0 +1,22 @@
+body {
+    font-family: Consolas, monospace;
+    background: #333;
+    color: #fff;
+}
+
+.widget {
+    padding: 10px 0;
+}
+
+.prefix {
+    font-weight: bold;
+    color: yellow;
+}
+
+.passed {
+    color: lime;
+}
+
+.failed {
+    color: red;
+}

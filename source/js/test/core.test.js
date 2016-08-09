@@ -69,8 +69,8 @@ describe("dashlight", function () {
             expect(dashlight.container.text()).toContain('Hello, world!');
         });
 
-        it("container contains the text 'build'", function () {
-            expect(dashlight.container.text()).toContain('build');
+        it("container contains the text 'build is finishing|running'", function () {
+            expect(dashlight.container.text()).toMatch('build is (finished|running);');
         });
     });
 });

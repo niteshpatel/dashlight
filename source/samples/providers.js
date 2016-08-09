@@ -1,5 +1,5 @@
 //noinspection JSUnresolvedFunction
-handleProviders(
+_handleProviders(
     [
         {
             name: "helloworld_provider",

@@ -8,8 +8,7 @@ dashlight.plugins = (function (module) {
                 state,
                 branch,
                 startTime,
-                finishTime,
-                isFinished;
+                finishTime;
 
             build = content[0];
             branch = build.branch;
@@ -17,15 +16,13 @@ dashlight.plugins = (function (module) {
             duration = moment.duration(build.duration);
             startTime = moment(build.started_at);
             finishTime = moment(build.finished_at);
-            isFinished = !!build.finished_at;
 
             return {
                 branch: branch,
                 state: state,
                 duration: duration,
                 startTime: startTime,
-                finishTime: finishTime,
-                isFinished: isFinished
+                finishTime: finishTime
             }
         };
 

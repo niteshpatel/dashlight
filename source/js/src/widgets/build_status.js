@@ -8,10 +8,14 @@ dashlight.widgets = (function (module) {
             var minutes;
 
             text = content.branch + " build"
-                + " is " + content.state
-                + "; started at " + content.startTime.format("DD MMM YYYY HH:mm:ss");
+                + " is " + content.state;
 
-            if (content.isFinished) {
+            if (!!content.startTime) {
+                text = text
+                    + "; started at " + content.startTime.format("DD MMM YYYY HH:mm:ss");
+            }
+
+            if (!!content.finishTime) {
                 minutes = content.duration.minutes();
                 textDuration = content.duration.seconds() + "s";
                 if (minutes > 0) {

@@ -9,7 +9,7 @@ describe("dashlight", function () {
         var renderSpy;
         beforeEach(function (done) {
             renderSpy = initAndWaitUntilRenderedAndReturnRenderSpy(done);
-        });
+        }, 15000);
 
         it("adds finish time if provided", function () {
             var text = dashlight.widgets.build_status.build({

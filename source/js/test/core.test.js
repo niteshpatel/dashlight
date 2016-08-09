@@ -36,7 +36,7 @@ describe("dashlight", function () {
 
         beforeEach(function (done) {
             renderSpy = initAndWaitUntilRenderedAndReturnRenderSpy(done);
-        });
+        }, 15000);
 
         it("has the 'one_line' and 'build_status' widgets loaded", function () {
             expect(Object.keys(dashlight.widgets)).toEqual([

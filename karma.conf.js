@@ -99,6 +99,12 @@ module.exports = function (config) {
         browsers: ['PhantomJS_custom'],
 
 
+        // browser disconnect settings
+        browserDisconnectTimeout: 20000,
+        browserNoActivityTimeout: 20000,
+        browserDisconnectTolerance: 10,
+
+
         // you can define custom flags
         customLaunchers: {
             'PhantomJS_custom': {

@@ -5,6 +5,7 @@ var dashlight = (function (module) {
         dashlight.container = container;
         //noinspection JSUnresolvedFunction
         loadWidgets()
+            .done(loadPlugins())
             .done(loadProviders());
     };
 
@@ -23,6 +24,25 @@ var dashlight = (function (module) {
             }
         };
         loadWidget(0);
+
+        return deferred;
+    };
+
+    var loadPlugins = function () {
+        var deferred = $.Deferred();
+
+        var loadPlugin = function (pluginId) {
+            if (pluginId < module.config.pluginUrls.length) {
+                $.getScript(module.config.pluginUrls[pluginId], function () {
+                    loadPlugin(++pluginId)
+                });
+            }
+            else {
+                //noinspection JSUnresolvedFunction
+                deferred.resolve();
+            }
+        };
+        loadPlugin(0);
 
         return deferred;
     };

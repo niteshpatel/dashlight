@@ -22,7 +22,7 @@ module.exports = function (config) {
             'source/js/src/config.js',
             'source/js/test/*.js',
             {
-                pattern: 'source/js/src/widgets/*',
+                pattern: 'source/js/**',
                 included: false,
                 served: true,
                 nocache: true
@@ -63,7 +63,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'source/js/src/*.js': ['coverage']
+            'source/js/src/**/*.js': ['coverage']
         },
 
 

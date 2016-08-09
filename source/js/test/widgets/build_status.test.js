@@ -11,10 +11,10 @@ describe("dashlight", function () {
             renderSpy = initAndWaitUntilRenderedAndReturnRenderSpy(done);
         });
 
-        it("adds start time if provided", function () {
+        it("adds finish time if provided", function () {
             var text = dashlight.widgets.build_status.build({
                 project: "dashlight",
-                build: "Build and Deploy",
+                build: "BnD",
                 state: "finished",
                 branch: "master",
                 startTime: moment(new Date()),
@@ -23,10 +23,9 @@ describe("dashlight", function () {
             }).text();
 
             expect(text)
-                .toMatch('dashlight :: Build and Deploy >'
-                    + ' (started|running|finished) build for \\[master\\];'
-                    + ' started at .*'
-                    + ' finished at .*'
+                .toMatch('dashlight :: BnD >'
+                    + ' (started|running|finished) \\[master\\];'
+                    + ' finished .*'
                     + ' \\(1m\\:40s\\)');
         });
     });

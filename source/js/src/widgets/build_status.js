@@ -10,7 +10,7 @@ dashlight.widgets = (function (module) {
 
             text = content.project + " :: " + content.build + " > "
                 + "<strong class='" + content.state + "'>" + content.state + "</strong> "
-                + " [<strong>" + content.branch + "</strong>]";
+                + "[<strong>" + content.branch + "</strong>]";
 
             if (content.finishTime.isValid()) {
                 minutes = content.duration.minutes();

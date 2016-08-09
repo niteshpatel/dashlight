@@ -64,7 +64,7 @@ describe("dashlight", function () {
 
         it("container contains the text 'build is finishing|running'", function () {
             expect(dashlight.container.text())
-                .toMatch('dashlight :: Build and Deploy > (started|running|passed|failed|finished) build for \\[master\\];');
+                .toMatch('dashlight :: BnD > (started|running|passed|failed|finished) \\[master\\];');
         });
     });
 });

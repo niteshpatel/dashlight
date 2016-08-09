@@ -40,7 +40,7 @@ var dashlight = (function (module) {
         $.ajax({
             url: module.config.providersUrl,
             dataType: "jsonp",
-            jsonpCallback: "callback",
+            jsonpCallback: "_handleProviders",
             success: handleProviders
         });
     };

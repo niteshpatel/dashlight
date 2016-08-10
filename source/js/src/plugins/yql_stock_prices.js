@@ -16,7 +16,9 @@ dashlight.plugins = (function (module) {
                 processed.push({
                     symbol: quotes[i].symbol,
                     name: quotes[i].Name,
-                    changeInPercent: quotes[i].ChangeinPercent
+                    price: quotes[i].LastTradePriceOnly,
+                    change: quotes[i].Change,
+                    percentChange: quotes[i].PercentChange
                 });
             }
 

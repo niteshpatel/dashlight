@@ -12,13 +12,15 @@ dashlight.widgets = (function (module) {
                 .append($("<span>").addClass("prefix").text("STOCKS "));
 
             for (var i = 0; i < content.length; i++) {
-                changeClass = content[i].changeInPercent.indexOf("-") > -1
+                changeClass = content[i].change.indexOf("-") > -1
                     ? "loss"
                     : "gain";
 
-                element.append($("<strong>").html(content[i].symbol))
+                element.append($("<strong>").html(content[i].symbol + " "))
                     .append($("<span>").html(" (" + content[i].name + ") "))
-                    .append($("<strong>").addClass(changeClass).html(content[i].changeInPercent));
+                    .append($("<strong>").html(content[i].price + " "))
+                    .append($("<strong>").addClass(changeClass).html(content[i].change))
+                    .append($("<span>").addClass(changeClass).html(" (" + content[i].percentChange + ") "));
 
                 if (i < content.length - 1) {
                     element.append(" | ");

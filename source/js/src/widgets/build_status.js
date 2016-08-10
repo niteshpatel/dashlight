@@ -21,7 +21,7 @@ dashlight.widgets = (function (module) {
 
                 text = text
                     + "; finished " + content.finishTime.format("HH:mm DD-MMM-YYYY ")
-                    + " (" + textDuration + ")";
+                    + " (took " + textDuration + ")";
             }
 
             else if (content.startTime.isValid()) {

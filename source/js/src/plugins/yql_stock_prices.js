@@ -2,6 +2,23 @@
 dashlight.plugins = (function (module) {
 
     module.yql_stock_prices = (function () {
+        var processRequest = function (provider) {
+            var url;
+
+            url = "https://query.yahooapis.com/v1/public/yql?q=" +
+                encodeURIComponent(
+                    "select * from yahoo.finance.quotes where symbol in "
+                    + '("' + provider.options.symbols.join('","') + '")'
+                )
+                + "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
+                + provider.name;
+
+            return {
+                url: url,
+                jsonp: true
+            }
+        };
+
         var processResponse = function (content) {
             var quotes,
                 processed;
@@ -26,6 +43,7 @@ dashlight.plugins = (function (module) {
         };
 
         return {
+            processRequest: processRequest,
             processResponse: processResponse
         }
     }());

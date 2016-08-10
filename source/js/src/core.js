@@ -4,36 +4,26 @@ var dashlight = (function (module) {
     var init = function (container) {
         dashlight.container = container;
         //noinspection JSUnresolvedFunction
-        loadWidgets()
-            .done(loadPlugins())
-            .done(loadProviders());
+
+        // http://stackoverflow.com/a/23058528
+        getScripts(module.config.widgetUrls, function () {
+            getScripts(module.config.pluginUrls, function () {
+                loadProviders();
+            })
+        });
     };
 
-    var loadWidgets = function () {
-        return loadItems(module.config.widgetUrls);
-    };
-
-    var loadPlugins = function () {
-        return loadItems(module.config.pluginUrls);
-    };
-
-    var loadItems = function (items) {
-        var deferred = $.Deferred();
-
-        var loadItem = function (itemId) {
-            if (itemId < items.length) {
-                $.getScript(items[itemId], function () {
-                    loadItem(++itemId)
-                });
-            }
-            else {
-                //noinspection JSUnresolvedFunction
-                deferred.resolve();
+    var getScripts = function (scripts, callback) {
+        var progress = 0;
+        var internalCallback = function () {
+            if (++progress == scripts.length) {
+                callback();
             }
         };
-        loadItem(0);
 
-        return deferred;
+        scripts.forEach(function (script) {
+            $.getScript(script, internalCallback);
+        });
     };
 
     var loadProviders = function () {
@@ -48,7 +38,12 @@ var dashlight = (function (module) {
     var handleProviders = function (providers) {
         var successCallBackFactory,
             provider,
+            url,
+            headers,
+            plugin,
+            requestOptions,
             settings;
+
 
         successCallBackFactory = function (index) {
             var p = providers[index];
@@ -60,13 +55,25 @@ var dashlight = (function (module) {
         for (var i = 0; i < providers.length; i++) {
             provider = providers[i];
 
+            url = provider.url;
+            headers = provider.headers;
+            jsonp = provider.jsonp;
+
+            plugin = dashlight.plugins[provider.plugin];
+            if (plugin && plugin.processRequest) {
+                requestOptions = plugin.processRequest(provider);
+                url = requestOptions.url;
+                headers = requestOptions.headers;
+                jsonp = requestOptions.jsonp;
+            }
+
             settings = {
-                url: provider.url,
-                headers: provider.headers,
+                url: url,
+                headers: headers,
                 success: successCallBackFactory(i)
             };
 
-            if (provider.jsonp) {
+            if (jsonp) {
                 settings.dataType = "jsonp";
                 settings.jsonpCallback = provider.name;
             }

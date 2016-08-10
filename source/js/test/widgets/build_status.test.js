@@ -26,7 +26,7 @@ describe("dashlight", function () {
                 .toMatch('dashlight :: BnD >'
                     + ' (started|running|finished) \\[master\\];'
                     + ' finished .*'
-                    + ' \\(1m\\:40s\\)');
+                    + ' \\(took 1m\\:40s\\)');
         });
     });
 });

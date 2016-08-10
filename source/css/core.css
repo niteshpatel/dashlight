@@ -20,3 +20,11 @@ body {
 .failed {
     color: red;
 }
+
+.gain {
+    color: lime;
+}
+
+.loss {
+    color: red;
+}

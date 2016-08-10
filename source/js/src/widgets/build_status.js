@@ -8,7 +8,7 @@ dashlight.widgets = (function (module) {
                 textDuration,
                 minutes;
 
-            text = content.project + " :: " + content.build + " > "
+            text = content.project + " :: <strong>" + content.build + "</strong> &gt; "
                 + "<strong class='" + content.state + "'>" + content.state + "</strong> "
                 + "[<strong>" + content.branch + "</strong>]";
 

@@ -87,7 +87,6 @@ var dashlight = (function (module) {
         dashlight.notifyRendered(name);
     };
 
-
     var notifyRendered = function () {
     };
 

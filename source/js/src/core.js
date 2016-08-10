@@ -16,8 +16,8 @@ var dashlight = (function (module) {
     var getScripts = function (scripts, callback) {
         var progress = 0;
         var internalCallback = function () {
-            if (++progress == scripts.length) {
-                callback();
+            if (++progress === scripts.length) {
+                return callback();
             }
         };
 

@@ -7,9 +7,8 @@ dashlight.widgets = (function (module) {
             changeClass;
 
         build = function (content) {
-            element = $("<div>")
-                .addClass("widget")
-                .append($("<span>").addClass("prefix").text("STOCKS "));
+            element = $("<div>").addClass("widget");
+            element.append($("<span>").addClass("prefix").text("STOCKS "));
 
             for (var i = 0; i < content.length; i++) {
                 changeClass = content[i].change.indexOf("-") > -1

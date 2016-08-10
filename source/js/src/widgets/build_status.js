@@ -29,10 +29,9 @@ dashlight.widgets = (function (module) {
                     + "; started " + content.startTime.format("HH:mm DD-MMM-YYYY ");
             }
 
-            element = $("<div>")
-                .addClass("widget")
-                .append($("<span>").addClass("prefix").text("BUILD "))
-                .append($("<span>").html(text));
+            element = $("<div>").addClass("widget");
+            element.append($("<span>").addClass("prefix").text("BUILD "));
+            element.append($("<span>").html(text));
 
             return element;
         };

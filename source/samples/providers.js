@@ -11,19 +11,15 @@ _handleProviders(
             name: "travis_dashlight_provider",
             widget: "build_status",
             plugin: "travis_build_status",
-            url: "https://api.travis-ci.org/repos/niteshpatel/dashlight/builds",
-            headers: {
-                "Accept": "application/vnd.travis-ci.2+json"
-            },
             options: {
-                project: "dashlight",
+                host: "https://api.travis-ci.org",
+                repository_id: "niteshpatel/dashlight",
                 build: "BnD"
             }
         },
         {
             name: "yahooquotes_provider",
             widget: "stock_prices",
-            jsonp: true,
             plugin: "yql_stock_prices",
             options: {
                 symbols: ["RBS.L", "AAPL", "GOOG"]

@@ -2,6 +2,25 @@
 dashlight.plugins = (function (module) {
 
     module.travis_build_status = (function () {
+        var processRequest = function (provider) {
+            var url,
+                headers;
+
+            url = provider.options.host
+                + "/repos/"
+                + provider.options.repository_id
+                + "/builds";
+
+            headers = {
+                "Accept": "application/vnd.travis-ci.2+json"
+            };
+
+            return {
+                url: url,
+                headers: headers
+            }
+        };
+
         var processResponse = function (content, options) {
             var build,
                 duration,
@@ -16,7 +35,7 @@ dashlight.plugins = (function (module) {
             finishTime = moment(build.finished_at);
 
             return {
-                project: options.project,
+                project: options.repository_id,
                 build: options.build,
                 branch: branch,
                 state: build.state,
@@ -27,6 +46,7 @@ dashlight.plugins = (function (module) {
         };
 
         return {
+            processRequest: processRequest,
             processResponse: processResponse
         }
     }());

@@ -5,8 +5,8 @@ dashlight.plugins = (function (module) {
         var processRequest = function (provider) {
             var url;
 
-            url = "https://query.yahooapis.com/v1/public/yql?q=" +
-                encodeURIComponent(
+            url = "https://query.yahooapis.com/v1/public/yql?q="
+                + encodeURIComponent(
                     "select * from yahoo.finance.quotes where symbol in "
                     + '("' + provider.options.symbols.join('","') + '")'
                 )

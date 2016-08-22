@@ -30,7 +30,7 @@ dashlight.plugins = (function (module) {
 
             build = content.builds[0];
             branch = content.commits[0].branch;
-            duration = moment.duration(build.duration);
+            duration = moment.duration(build.duration * 1000);
             startTime = moment(build.started_at);
             finishTime = moment(build.finished_at);
 

@@ -18,9 +18,9 @@ _handleProviders(
             }
         },
         {
-            name: "yahooquotes_provider",
+            name: "iexquotes_provider",
             widget: "stock_prices",
-            plugin: "yql_stock_prices",
+            plugin: "iex_stock_prices",
             options: {
                 symbols: ["RBS.L", "AAPL", "GOOG"]
             }

@@ -27,7 +27,7 @@ describe("dashlight", function () {
             expect(dashlight.config.pluginUrls)
                 .toEqual([
                     "js/src/plugins/travis_build_status.js",
-                    "js/src/plugins/yql_stock_prices.js"
+                    "js/src/plugins/iex_stock_prices.js"
                 ]);
         });
     });
@@ -51,7 +51,7 @@ describe("dashlight", function () {
         it("has the expected plugin loaded", function () {
             expect(Object.keys(dashlight.plugins)).toEqual([
                 "travis_build_status",
-                "yql_stock_prices"
+                "iex_stock_prices"
             ]);
         });
 
@@ -60,7 +60,7 @@ describe("dashlight", function () {
             expect(allArgs.length).toEqual(3);
 
             expect(allArgs).toContain(["helloworld_provider"]);
-            expect(allArgs).toContain(["yahooquotes_provider"]);
+            expect(allArgs).toContain(["iexquotes_provider"]);
             expect(allArgs).toContain(["travis_dashlight_provider"]);
         });
 
@@ -76,7 +76,7 @@ describe("dashlight", function () {
 
         it("container contains the expected quote symbols", function () {
             expect(dashlight.container.text())
-                .toContain('RBS.L');
+                .toContain('AAPL');
             expect(dashlight.container.text())
                 .toContain('GOOG');
         });

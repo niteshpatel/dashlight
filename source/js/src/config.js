@@ -9,7 +9,7 @@ var dashlight = (function (module) {
         ],
         pluginUrls: [
             "js/src/plugins/travis_build_status.js",
-            "js/src/plugins/yql_stock_prices.js"
+            "js/src/plugins/iex_stock_prices.js"
         ]
     };
 
